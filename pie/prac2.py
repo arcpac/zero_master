@@ -17,17 +17,27 @@ class Archer(User):
         self.name = name
         self.num_arrows = num_arrows
 
-    def attack(self):
+    def check_arrows(self):
         print(f'You have {self.num_arrows} arrows')
 
+    def run(self):
+        print('run really fast')
 
-wizard1 = Wizard('Merlin', 50)
-archer1 = Archer('Robin', 100)
+# inheritance
+class HybridBorg(Wizard, Archer):
+    def __init__(self, name, power, num_arrows):
+        Archer.__init__(self, name, num_arrows)
+        Wizard.__init__(self, name, power)
+        
+
+# wizard1 = Wizard('Merlin', 50)
 
 
-def player_attack(character):
-    character.attack()
+# def player_attack(character):
+#     character.attack()
+hb = HybridBorg('Borgy', 50, 100)
+print(hb.sign_in())
 
-
-player_attack(wizard1)
-player_attack(archer1)
+# print(wizard1.email)
+# print(dir(wizard1))
+# print(len([1,2,3,4]))
