@@ -39,4 +39,4 @@ def raise_error():
         finally:
             print('DONE')
 
-fn_try()
+raise_error()
